@@ -19,9 +19,9 @@ We have also made use of Elasticsearch to create an inverted index for providing
 
 ## Instructions to start the server.
 1. Clone this repository by executing the following command in your terminal:
-```>> git clone https://github.com/amitasviper/recommendation-system```
+```>> git clone https://github.com/honeybee0716-pro/Recommendation_System.git```
 2. Goto into this directory using the following command:
-```>> cd recommendation-system```
+```>> cd Recommendation_System```
 3. Make sure that docker service is running into your system.
 4. No run to bring up the containers for the recommender, execute the following command
 ```>> docker-compose up```
