@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+	<div>
+		<div class="listing">
+			<h2>Recommendations</h2>
+			<div class="scrolling-wrapper-flexbox">
+				{% for movie in recommended %}
+					<div class="card">
+						<div class="movie-info">
+							<a href="/movie/{{ movie['id'] }}">
+								<img class="list-image" src="{{ movie['url'] }}"/>
+							</a>
+							<p class="img-caption">{{ movie['title'] }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="listing">
+			<h2>Watch it again</h2>
+			<div class="scrolling-wrapper-flexbox">
+				{% for movie in watched %}
+					<div class="card">
+						<div class="movie-info">
+							<a href="/movie/{{ movie['id'] }}">
+								<img class="list-image" src="{{ movie['url'] }}"/>
+							</a>
+							<p class="img-caption">{{ movie['title'] }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="listing">
+			<h2>Recent Releases</h2>
+			<div class="scrolling-wrapper-flexbox">
+				{% for movie in recent %}
+					<div class="card">
+						<div class="movie-info">
+							<a href="/movie/{{ movie['id'] }}">
+								<img class="list-image" src="{{ movie['url'] }}"/>
+							</a>
+							<p class="img-caption">{{ movie['title'] }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="listing">
+			<h2>Popular</h2>
+			<div class="scrolling-wrapper-flexbox">
+				{% for movie in popular %}
+					<div class="card">
+						<div class="movie-info">
+							<a href="/movie/{{ movie['id'] }}">
+								<img class="list-image" src="{{ movie['url'] }}"/>
+							</a>
+							<p class="img-caption">{{ movie['title'] }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="listing">
+			<h2>Beacuse you had watched {{ similar_to['name'] }}</h2>
+			<div class="scrolling-wrapper-flexbox">
+				{% for movie in similar_to['recommendations'] %}
+					<div class="card">
+						<div class="movie-info">
+							<a href="/movie/{{ movie['id'] }}">
+								<img class="list-image" src="{{ movie['url'] }}"/>
+							</a>
+							<p class="img-caption">{{ movie['title'] }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
